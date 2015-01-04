@@ -54,7 +54,7 @@ RUN     make -j4
 
 WORKDIR /python_deps
 RUN     wget http://ftp.gnu.org/gnu/gdb/gdb-7.6.2.tar.gz
-RUN     tar xvf gdb-7.6.2.tar.gz
+RUN     tar xf gdb-7.6.2.tar.gz
 WORKDIR /python_deps/gdb-7.6.2
 RUN     ./configure
 RUN     make -j4
@@ -64,7 +64,7 @@ RUN     echo "GDB := \$(DEPS_DIR)/gdb-7.6.2/gdb/gdb --data-directory \$(DEPS_DIR
 WORKDIR /python_deps
 
 RUN     wget http://ftp.gnu.org/gnu/binutils/binutils-2.24.tar.gz
-RUN     tar xvf binutils-2.24.tar.gz
+RUN     tar xf binutils-2.24.tar.gz
 RUN     mkdir binutils-2.24-build
 WORKDIR /python_deps/binutils-2.24-build
 RUN     ../binutils-2.24/configure --enable-gold --enable-plugins --disable-werror
